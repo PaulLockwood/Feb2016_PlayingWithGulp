@@ -1,0 +1,17 @@
+/*.shrinkButtonBorder table { border-collapse:collapse }*/
+
+button:active {
+  outline: -2;
+  border: -2;
+}
+
+
+/*table { border-collapse:collapse }*/
+
+.shrinkButtonBorder {
+  background-color: lightgreen;
+  border: none;
+  margin: 0px;
+  height: 40px;
+  width: 40px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="ticTacToe">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Tic-Tac-Toe using AI (minimax algorithm)</title>
+
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20150503/json2.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine-html.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.7/angular-messages.js"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular-mocks.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js"></script>
+
+  <!-- build:css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- endbuild -->
+
+  <!-- build:js -->
+  <script src="js/tictactoe.js"></script>
+  <!-- endbuild -->
+
+  <script src="jasmine/jasmineTests001.js"></script>
+  <script src="jasmine/jasmineTests002.js"></script>
+
+</head>
+
+<body ng-controller="gridController as grid">
+  <h1>Tic-Tac-Toe with AI (minimax algorithm)</h1>
+  <!-- {{ 1 + 3 }} -->
+  <table>
+    <tbody>
+      <tr ng-repeat="rowNumber in [0,1,2]">
+        <td ng-repeat="colNumber in [0,1,2]" ng-init="position = (rowNumber*3) + colNumber;">
+          <button type="button" id="r{{rowNumber}},c{{colNumber}}" class="shrinkButtonBorder" ng-click="grid.buttonPress(position)">
+            {{ grid.gridData.charAt(position) === '0' ? ' ' : grid.gridData.charAt(position) }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  {{ grid.gameStatus() }}
+
+  <br />
+</body>
+
+</html>
